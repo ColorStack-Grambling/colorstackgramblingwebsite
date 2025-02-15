@@ -13,7 +13,6 @@ const spotlightController = {
         }
     },
 
-    // This method would return all spotlight objects
     getAll: async (req, res) => {
         try {
             const spotlights = await MemberSpotlight.find();
@@ -23,7 +22,6 @@ const spotlightController = {
         }
     },
 
-    // This method would return a single spotlight object based on the id provided
     getById: async (req, res) => {
         try {
             const spotlight = await MemberSpotlight.findById(req.params.id);
@@ -34,7 +32,6 @@ const spotlightController = {
         }
     },
 
-    // I should implement the logic for the update and delete methods later today
 
 };
 
