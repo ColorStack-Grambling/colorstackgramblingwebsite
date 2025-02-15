@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const spotlightController = require('./spotlightController');
+const spotlightController = require('../controllers/spotlightController');
 
 router.post('/', spotlightController.create);
 router.get('/', spotlightController.getAll);
