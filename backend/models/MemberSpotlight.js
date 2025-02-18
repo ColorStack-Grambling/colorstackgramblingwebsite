@@ -1,14 +1,31 @@
-const mongoose = require('mongoose');
-
-const memberSpotlightSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  bio: { type: String, required: true },
-  achievements: [String],
-  photoUrl: { type: String, required: true },
-  featured: { type: Boolean, default: false },
-  graduationYear: Number,
-  major: String,
-  createdAt: { type: Date, default: Date.now }
+const mongoose = require('mongoose')
+const spotlightSchema = new mongoose.Schema({
+  memberName: {
+    type: String,
+    required: true
+  },
+  achievements: {
+    type: [String],
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }, 
+  photoUrl: {
+    type: String,
+    required: true
+  }, 
+  graduationYear: {
+    type: Number,
+    required: true
+  },
+  major: {
+    type: String,
+    required: true
+  },
 });
 
-module.exports = mongoose.model('MemberSpotlight', memberSpotlightSchema);
+const MemberSpotlight = mongoose.model('MemberSpotlight', spotlightSchema);
+
+module.exports = MemberSpotlight;
