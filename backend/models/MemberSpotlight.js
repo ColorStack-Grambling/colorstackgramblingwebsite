@@ -1,12 +1,11 @@
-const mongoose = require('mongoose');
-
+const mongoose = require('mongoose')
 const spotlightSchema = new mongoose.Schema({
   memberName: {
     type: String,
     required: true
   },
   achievements: {
-    type: String,
+    type: [String],
     required: true
   },
   date: {
