@@ -189,3 +189,14 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+
+// Logout
+exports.logoutUser = async (req, res) => {
+  try {
+    
+    await User.findByIdAndUpdate(req.user.id, { refreshToken: null })
+    res.json({ message: "Logout out successfully" })
+  } catch (error) {
+    res.status(500).json({ message: "Logout failed", error })
+  } 
+}
