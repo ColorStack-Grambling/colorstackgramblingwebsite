@@ -7,6 +7,8 @@ const {
   deleteUser,
   getUsers,
   refreshToken,
+  logoutUser,
+  changePassword,
   addUser,
 } = require("../controllers/userController");
 
@@ -26,5 +28,9 @@ router.get("/", protect, isAdmin, getUsers);
 router.put("/:id", protect, isAdmin, updateUser);
 router.delete("/:id", protect, isAdmin, deleteUser);
 router.post("/add-user", protect, isAdmin, addUser);
+
+// Logout and Change password
+router.post("/logout", protect, logoutUser)
+route.post("/change-password", protect, changePassword)
 
 module.exports = router;
