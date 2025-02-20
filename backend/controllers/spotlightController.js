@@ -31,7 +31,18 @@ const spotlightController = {
             res.status(500).json({ message: error.message });
         }
     },
-
+    update: async (req, res) => {
+        try {
+            const spotlight = await MemberSpotlight.findByIdAndUpdate(
+                req.params.id,
+                req.body,
+                { new: true }
+            );
+            res.json(spotlight);
+        } catch (error) {
+            res.status(400).json({ message: error.message });
+        }
+    }
 
 };
 
