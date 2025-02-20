@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
   },
   refreshToken: {
     type: String,
+    required: false,
   },
   events: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event" }],
   memberSpotlights: [
