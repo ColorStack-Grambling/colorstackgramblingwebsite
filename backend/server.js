@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectDB } = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
-
+const spotlightRoutes = require("./routes/spotlightRoutes.js");
 dotenv.config();
 
 const app = express();
@@ -19,6 +19,8 @@ app.use((req, res, next) => {
 app.use(cors());
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/spotlights", spotlightRoutes);
 
 // Invalid Routes
 app.use((req, res) => {
