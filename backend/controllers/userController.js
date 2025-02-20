@@ -59,7 +59,7 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
 
     const trimmedPassword = password.trim();
-    
+
     const user = await User.create({
       username,
       email,
@@ -82,8 +82,6 @@ exports.loginUser = async (req, res) => {
     }
 
     const trimmedPassword = password.trim();
-
-    
 
     const isMatch = await bcrypt.compare(trimmedPassword, user.password);
 
@@ -156,7 +154,6 @@ exports.addUser = async (req, res) => {
   }
 };
 
-
 exports.getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -191,12 +188,47 @@ exports.deleteUser = async (req, res) => {
 };
 
 // Logout
+// Users should not be able to access certain routes after logging - 
 exports.logoutUser = async (req, res) => {
   try {
-    
-    await User.findByIdAndUpdate(req.user.id, { refreshToken: null })
-    res.json({ message: "Logout out successfully" })
+    await User.findByIdAndUpdate(req.user.id, { refreshToken: null });
+    res.json({ message: "Logged out successfully!" });
   } catch (error) {
-    res.status(500).json({ message: "Logout failed", error })
-  } 
-}
+    res.status(500).json({ message: "Logout failed", error });
+  }
+};
+
+// Change password
+exports.changePassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword, confirmPassword } = req.body;
+
+    if (!oldPassword || !newPassword || !confirmPassword) {
+      return res.status(400).json({ message: "All fieldss are required" });
+    }
+
+    if (newPassword !== confirmPassword) {
+      return res.status(400).json({ message: "New passwords do not match" });
+    }
+
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!isMatch) {
+      return res.status(404).json({ message: "Incorrect old password" });
+    }
+
+    user.password = newPassword;
+
+    await user.save();
+
+    res.json({ message: "Password changed successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
