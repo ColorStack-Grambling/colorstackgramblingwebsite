@@ -42,8 +42,15 @@ const spotlightController = {
         } catch (error) {
             res.status(400).json({ message: error.message });
         }
+    },
+    delete: async (req, res) => {
+        try {
+            await MemberSpotlight.findByIdAndDelete(req.params.id);
+            res.json({ message: 'Spotlight deleted' });
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
     }
-
 };
 
 module.exports = spotlightController;
