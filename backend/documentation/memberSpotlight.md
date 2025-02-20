@@ -125,19 +125,19 @@ curl -X POST http://localhost:5000/api/spotlights \
     "major": "Computer Science"
   }'
 
-# Get all spotlights
+# To get all spotlights
 curl http://localhost:5000/api/spotlights
 
 # Get specific spotlight
 curl http://localhost:5000/api/spotlights/[spotlightId]
 
-# Update spotlight
+# To update spotlight
 curl -X PUT http://localhost:5000/api/spotlights/[spotlightId] \
   -H "Content-Type: application/json" \
   -d '{
     "major": "Updated Major"
   }'
 
-# Delete spotlight
+# Delete a spotlight
 curl -X DELETE http://localhost:5000/api/spotlights/[spotlightId]
 ```
