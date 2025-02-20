@@ -5,7 +5,6 @@ const spotlightController = require('../controllers/spotlightController');
 router.post('/', spotlightController.create);
 router.get('/', spotlightController.getAll);
 router.get('/:id', spotlightController.getById);
-// Haven't implemented the logic for these two yet
 router.put('/:id', spotlightController.update);
 router.delete('/:id', spotlightController.delete);
 
