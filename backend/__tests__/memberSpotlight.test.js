@@ -33,7 +33,10 @@ describe('MemberSpotlight Model Test', () => {
     // Validating the required fields
     it('should fail to save spotlight without required fields', async () => {
         const spotlightWithoutRequired = new MemberSpotlight({
-            memberName: 'John Doe'
+            memberName: 'John Doe',
+            achievements: ['Dean\'s List', 'Hackathon Winner'],
+            graduationYear: 2025,
+            major: 'Computer Science'
         });
 
         let err;
