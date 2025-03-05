@@ -4,6 +4,7 @@
 The Member Spotlight API manages featured members in the ColorStack Grambling Chapter website. It provides CRUD operations for member spotlights with proper validation and error handling.
 
 ## Model Schema
+
 ```javascript
 {
   memberName: {
@@ -39,6 +40,7 @@ The Member Spotlight API manages featured members in the ColorStack Grambling Ch
 - **Method:** POST
 - **Endpoint:** `/api/spotlights`
 - **Request Body:**
+
 ```json
 {
   "memberName": "John Doe",
@@ -48,6 +50,7 @@ The Member Spotlight API manages featured members in the ColorStack Grambling Ch
   "major": "Computer Science"
 }
 ```
+
 - **Success Response:** `201 Created`
 - **Error Response:** `400 Bad Request`
 
@@ -56,6 +59,7 @@ The Member Spotlight API manages featured members in the ColorStack Grambling Ch
 - **Endpoint:** `/api/spotlights`
 - **Query Parameters:** None
 - **Success Response:** `200 OK`
+
 ```json
 [
   {
@@ -101,6 +105,7 @@ All endpoints include error handling for:
 
 ## Testing
 To run the tests:
+
 ```bash
 npm test
 ```
@@ -111,27 +116,29 @@ Test cases cover:
 3. Invalid graduation year handling
 4. MongoDB ObjectId validation
 5. CRUD operations validation
+6. Extensive testing of the Events API, emailing service, and User management systems
 
 ## Example Usage with cURL
+
 ```bash
 # Create new spotlight
 curl -X POST http://localhost:5000/api/spotlights \
   -H "Content-Type: application/json" \
   -d '{
     "memberName": "John Doe",
-    "achievements": ["Dean'\''s List"],
+    "achievements": ["Dean's List"],
     "photoUrl": "https://example.com/photo.jpg",
     "graduationYear": 2025,
     "major": "Computer Science"
   }'
 
-# To get all spotlights
+# Get all spotlights
 curl http://localhost:5000/api/spotlights
 
 # Get specific spotlight
 curl http://localhost:5000/api/spotlights/[spotlightId]
 
-# To update spotlight
+# Update spotlight
 curl -X PUT http://localhost:5000/api/spotlights/[spotlightId] \
   -H "Content-Type: application/json" \
   -d '{
@@ -140,4 +147,3 @@ curl -X PUT http://localhost:5000/api/spotlights/[spotlightId] \
 
 # Delete a spotlight
 curl -X DELETE http://localhost:5000/api/spotlights/[spotlightId]
-```
