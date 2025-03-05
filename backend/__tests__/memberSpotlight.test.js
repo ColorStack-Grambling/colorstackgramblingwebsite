@@ -9,6 +9,14 @@ const express = require('express');
 let app;
 let server;
 
+
+/*
+Tested the creation of a new spotlight
+Tested the creation of a spotlight without required fields
+Tested the creation of a spotlight with an invalid graduation year
+Tested the photo upload functionality
+*/
+
 describe('MemberSpotlight Model Test', () => {
     beforeAll(async () => {
         app = express();
@@ -55,7 +63,6 @@ describe('MemberSpotlight Model Test', () => {
         expect(savedSpotlight.date).toBeDefined();
     });
 
-    // Validating the required fields
     it('should fail to save spotlight without required fields', async () => {
         const spotlightWithoutRequired = new MemberSpotlight({
             memberName: 'John Doe',
@@ -73,7 +80,6 @@ describe('MemberSpotlight Model Test', () => {
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
     });
 
-    // Validating the graduationYear
     it('should fail with invalid graduation year', async () => {
         const invalidSpotlight = {
             memberName: 'John Doe',
@@ -92,6 +98,8 @@ describe('MemberSpotlight Model Test', () => {
         expect(err).toBeDefined();
     });
 
+
+    
     it('should handle photo upload successfully', async () => {
         const assetsDir = path.join(__dirname, 'test_assets');
         const testImagePath = path.join(assetsDir, 'test_image.png');
