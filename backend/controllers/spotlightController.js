@@ -7,8 +7,16 @@ const storage = multer.diskStorage({
         cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, uniqueSuffix + path.extname(file.originalname));
+        const memberName = req.body.memberName
+            .toLowerCase()
+            .replace(/\s+/g, '-') 
+            .replace(/[^a-z0-9-]/g, ''); 
+        
+        const timestamp = Date.now();
+        const extension = path.extname(file.originalname);
+        const filename = `${memberName}-${timestamp}${extension}`;
+        
+        cb(null, filename);
     }
 });
 
