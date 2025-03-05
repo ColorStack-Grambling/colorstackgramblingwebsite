@@ -72,14 +72,9 @@ describe('MemberSpotlight Model Test', () => {
     });
 
     it('should handle photo upload successfully', async () => {
-        // Create test image directory if it doesn't exist
-        const fixturesDir = path.join(__dirname, 'fixtures');
-        if (!fs.existsSync(fixturesDir)) {
-            fs.mkdirSync(fixturesDir);
-        }
 
         // Create a simple test image
-        const testImagePath = path.join(fixturesDir, 'test-image.jpg');
+        const testImagePath = path.join(fixturesDir, 'test_image.jpg');
         fs.writeFileSync(testImagePath, 'fake image content');
 
         const response = await request(router)
