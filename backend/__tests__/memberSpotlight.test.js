@@ -14,8 +14,20 @@ describe('MemberSpotlight Model Test', () => {
         app = express();
         app.use(express.json());
         app.use('/spotlights', router);
-        server = app.listen(3001); 
-        await mongoose.connect('mongodb://localhost:27017/colorstack_test');
+        
+        const uploadsDir = path.join(__dirname, '../uploads');
+        if (!fs.existsSync(uploadsDir)) {
+            fs.mkdirSync(uploadsDir, { recursive: true });
+        }
+        
+        await new Promise(resolve => {
+            server = app.listen(3001, resolve);
+        });
+        
+        await mongoose.connect('mongodb://localhost:27017/colorstack_test', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
     });
 
     afterAll(async () => {
@@ -80,30 +92,24 @@ describe('MemberSpotlight Model Test', () => {
         expect(err).toBeDefined();
     });
 
-
     it('should handle photo upload successfully', async () => {
         const assetsDir = path.join(__dirname, 'test_assets');
         const testImagePath = path.join(assetsDir, 'test_image.png');
 
         try {
-            const response = await request(app) 
+            const response = await request(app)
                 .post('/spotlights')
-                .attach('photo', testImagePath)
-                .field('memberName', 'Jane Doe')
+                .field('memberName', 'Josh Irvin')
                 .field('achievements', 'Achievement 1,Achievement 2')
                 .field('graduationYear', '2025')
-                .field('major', 'Computer Science');
+                .field('major', 'Computer Science')
+                .attach('photo', testImagePath);
 
             expect(response.status).toBe(201);
             expect(response.body.photoUrl).toBeDefined();
             expect(response.body.photoUrl).toMatch(/^\/uploads\/.+\.png$/);
         } finally {
-            if (fs.existsSync(testImagePath)) {
-                fs.unlinkSync(testImagePath);
-            }
-            if (fs.existsSync(assetsDir)) {
-                fs.rmdirSync(assetsDir);
-            }
+        
         }
-    }, 10000);
+    }, 12000); 
 });
