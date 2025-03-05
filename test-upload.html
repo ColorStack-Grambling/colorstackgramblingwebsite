@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Upload</title>
+</head>
+<body>
+    <form action="http://localhost:5000/api/spotlights" method="POST" enctype="multipart/form-data">
+        <div>
+            <label>Photo:</label>
+            <input type="file" name="photo" accept="image/*" required>
+        </div>
+        <div>
+            <label>Member Name:</label>
+            <input type="text" name="memberName" required>
+        </div>
+        <div>
+            <label>Achievements (comma-separated):</label>
+            <input type="text" name="achievements" required>
+        </div>
+        <div>
+            <label>Graduation Year:</label>
+            <input type="number" name="graduationYear" required>
+        </div>
+        <div>
+            <label>Major:</label>
+            <input type="text" name="major" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
