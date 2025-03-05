@@ -14,7 +14,7 @@ describe('MemberSpotlight Model Test', () => {
         app = express();
         app.use(express.json());
         app.use('/spotlights', router);
-        server = app.listen(3001); // Use a specific port for testing
+        server = app.listen(3001); 
         await mongoose.connect('mongodb://localhost:27017/colorstack_test');
     });
 
@@ -84,7 +84,6 @@ describe('MemberSpotlight Model Test', () => {
     it('should handle photo upload successfully', async () => {
         const assetsDir = path.join(__dirname, 'test_assets');
         const testImagePath = path.join(assetsDir, 'test_image.png');
-        fs.writeFileSync(testImagePath, 'fake image content');
 
         try {
             const response = await request(app) 
@@ -102,8 +101,8 @@ describe('MemberSpotlight Model Test', () => {
             if (fs.existsSync(testImagePath)) {
                 fs.unlinkSync(testImagePath);
             }
-            if (fs.existsSync(fixturesDir)) {
-                fs.rmdirSync(fixturesDir);
+            if (fs.existsSync(assetsDir)) {
+                fs.rmdirSync(assetsDir);
             }
         }
     }, 10000);
