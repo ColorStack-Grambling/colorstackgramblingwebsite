@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const MemberSpotlight = require('../models/MemberSpotlight');
+const request = require('supertest');
+const path = require('path');
+const fs = require('fs');
+const router = require('../routes/spotlightRoutes');
 
 describe('MemberSpotlight Model Test', () => {
     beforeAll(async () => {
@@ -65,5 +69,33 @@ describe('MemberSpotlight Model Test', () => {
             err = error;
         }
         expect(err).toBeDefined();
+    });
+
+    it('should handle photo upload successfully', async () => {
+        // Create test image directory if it doesn't exist
+        const fixturesDir = path.join(__dirname, 'fixtures');
+        if (!fs.existsSync(fixturesDir)) {
+            fs.mkdirSync(fixturesDir);
+        }
+
+        // Create a simple test image
+        const testImagePath = path.join(fixturesDir, 'test-image.jpg');
+        fs.writeFileSync(testImagePath, 'fake image content');
+
+        const response = await request(router)
+            .post('/spotlights')
+            .attach('photo', testImagePath)
+            .field('memberName', 'Jane Doe')
+            .field('achievements', 'Achievement 1,Achievement 2')
+            .field('graduationYear', '2025')
+            .field('major', 'Computer Science');
+
+        // Clean up test image
+        fs.unlinkSync(testImagePath);
+        fs.rmdirSync(fixturesDir);
+
+        expect(response.status).toBe(201);
+        expect(response.body.photoUrl).toBeDefined();
+        expect(response.body.photoUrl).toMatch(/^\/uploads\/.+\.jpg$/);
     });
 });
