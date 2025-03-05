@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const { connectDB } = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const spotlightRoutes = require("./routes/spotlightRoutes.js");
+const path = require('path');
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,8 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 
 app.use("/api/spotlights", spotlightRoutes);
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Invalid Routes
 app.use((req, res) => {
