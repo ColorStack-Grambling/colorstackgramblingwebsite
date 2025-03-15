@@ -58,3 +58,22 @@ exports.getEventById = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+// Controller to handle event registration
+exports.registerForEvent = async (req, res) => {
+    try {
+        const event = await EventService.registerForEvent(req.params.id, req.user.id);
+        res.status(200).json({
+            message: 'Successfully registered for the event',
+            event
+        });
+    } catch (error) {
+        if (error.message === 'Event not found' || error.message === 'User not found') {
+            return res.status(404).json({ message: error.message });
+        }
+        if (error.message === 'User already registered for this event') {
+            return res.status(400).json({ message: error.message });
+        }
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
