@@ -28,7 +28,7 @@ const Events = () => {
   return (
     <PublicLayout>
       {/* Hero Section */}
-      <section className="bg-colorstack-blue py-16">
+      <section className="bg-black pt-28 pb-16">
         <div className="container-custom mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Events</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
