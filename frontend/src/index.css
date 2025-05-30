@@ -184,46 +184,46 @@ html {
 
 @keyframes orbit1 {
   0% { 
-    transform: rotate(0deg) translateX(300px) rotate(0deg);
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
   }
   100% { 
-    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
   }
 }
 
 @keyframes orbit2 {
   0% { 
-    transform: rotate(72deg) translateX(300px) rotate(-72deg);
+    transform: rotate(72deg) translateX(250px) rotate(-72deg);
   }
   100% { 
-    transform: rotate(432deg) translateX(300px) rotate(-432deg);
+    transform: rotate(432deg) translateX(250px) rotate(-432deg);
   }
 }
 
 @keyframes orbit3 {
   0% { 
-    transform: rotate(144deg) translateX(300px) rotate(-144deg);
+    transform: rotate(144deg) translateX(250px) rotate(-144deg);
   }
   100% { 
-    transform: rotate(504deg) translateX(300px) rotate(-504deg);
+    transform: rotate(504deg) translateX(250px) rotate(-504deg);
   }
 }
 
 @keyframes orbit4 {
   0% { 
-    transform: rotate(216deg) translateX(300px) rotate(-216deg);
+    transform: rotate(216deg) translateX(250px) rotate(-216deg);
   }
   100% { 
-    transform: rotate(576deg) translateX(300px) rotate(-576deg);
+    transform: rotate(576deg) translateX(250px) rotate(-576deg);
   }
 }
 
 @keyframes orbit5 {
   0% { 
-    transform: rotate(288deg) translateX(300px) rotate(-288deg);
+    transform: rotate(288deg) translateX(250px) rotate(-288deg);
   }
   100% { 
-    transform: rotate(648deg) translateX(300px) rotate(-648deg);
+    transform: rotate(648deg) translateX(250px) rotate(-648deg);
   }
 }
 
@@ -335,27 +335,73 @@ html {
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
   @keyframes orbit1 {
-    0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
   }
 
   @keyframes orbit2 {
-    0% { transform: rotate(72deg) translateX(200px) rotate(-72deg); }
-    100% { transform: rotate(432deg) translateX(200px) rotate(-432deg); }
+    0% { transform: rotate(72deg) translateX(140px) rotate(-72deg); }
+    100% { transform: rotate(432deg) translateX(140px) rotate(-432deg); }
   }
 
   @keyframes orbit3 {
-    0% { transform: rotate(144deg) translateX(200px) rotate(-144deg); }
-    100% { transform: rotate(504deg) translateX(200px) rotate(-504deg); }
+    0% { transform: rotate(144deg) translateX(140px) rotate(-144deg); }
+    100% { transform: rotate(504deg) translateX(140px) rotate(-504deg); }
   }
 
   @keyframes orbit4 {
-    0% { transform: rotate(216deg) translateX(200px) rotate(-216deg); }
-    100% { transform: rotate(576deg) translateX(200px) rotate(-576deg); }
+    0% { transform: rotate(216deg) translateX(140px) rotate(-216deg); }
+    100% { transform: rotate(576deg) translateX(140px) rotate(-576deg); }
   }
 
   @keyframes orbit5 {
-    0% { transform: rotate(288deg) translateX(200px) rotate(-288deg); }
-    100% { transform: rotate(648deg) translateX(200px) rotate(-648deg); }
+    0% { transform: rotate(288deg) translateX(140px) rotate(-288deg); }
+    100% { transform: rotate(648deg) translateX(140px) rotate(-648deg); }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  @keyframes orbit1 {
+    0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+  }
+
+  @keyframes orbit2 {
+    0% { transform: rotate(72deg) translateX(180px) rotate(-72deg); }
+    100% { transform: rotate(432deg) translateX(180px) rotate(-432deg); }
+  }
+
+  @keyframes orbit3 {
+    0% { transform: rotate(144deg) translateX(180px) rotate(-144deg); }
+    100% { transform: rotate(504deg) translateX(180px) rotate(-504deg); }
+  }
+
+  @keyframes orbit4 {
+    0% { transform: rotate(216deg) translateX(180px) rotate(-216deg); }
+    100% { transform: rotate(576deg) translateX(180px) rotate(-576deg); }
+  }
+
+  @keyframes orbit5 {
+    0% { transform: rotate(288deg) translateX(180px) rotate(-288deg); }
+    100% { transform: rotate(648deg) translateX(180px) rotate(-648deg); }
+  }
+}
+
+/* Company slider speed adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .animate-company-slide {
+    animation: company-slide 12s linear infinite; /* Much faster on mobile */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .animate-company-slide {
+    animation: company-slide 25s linear infinite; /* Medium speed on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .animate-company-slide {
+    animation: company-slide 35s linear infinite; /* Slower on desktops */
   }
 }

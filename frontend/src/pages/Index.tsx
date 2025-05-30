@@ -33,34 +33,71 @@ const Index = () => {
     <PublicLayout>
       {/* Hero Section */}
       <section className="bg-black min-h-screen flex items-center">
-        <div className="container-custom mx-auto py-16 md:py-24">
-          <div className="pl-10 pr-10 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-full md:w-1/2 text-left mb-8 md:mb-0 pl-10">
-              <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="text-4xl md:text-5xl font-bold text-white mb-3">
+        <div className="container-custom mx-auto py-10 md:py-24">
+          {/* Reordering for mobile - image first on small screens, side by side on larger screens */}
+          <div className="px-4 sm:px-6 lg:px-10 flex flex-col-reverse md:flex-row items-center gap-8">
+            {/* Text content */}
+            <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 mt-8 md:mt-0 md:pl-6 lg:pl-10">
+              <motion.h1 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 1, delay: 0.2 }} 
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 md:mb-3"
+              >
                 Welcome to
               </motion.h1>
-              <motion.h1 initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1, type: "spring", stiffness: 100 }} className="text-4xl md:text-8xl font-bold text-colorstack-gold mb-6 pb-2">
+              <motion.h1 
+                initial={{ x: -100, opacity: 0 }} 
+                animate={{ x: 0, opacity: 1 }} 
+                transition={{ duration: 1, type: "spring", stiffness: 100 }} 
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-colorstack-gold mb-4 md:mb-6 pb-2"
+              >
                 ColorStack Grambling
               </motion.h1>
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.3 }} className="text-2xl font-poppins font-semibold md:text-2xl text-white/90 mb-8">
+              <motion.p 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 1, delay: 0.3 }} 
+                className="text-xl sm:text-2xl font-poppins font-semibold text-white/90 mb-6 md:mb-8 max-w-xl mx-auto md:mx-0"
+              >
                 Redefining Black Excellence in Tech.
               </motion.p>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/join" className="bg-colorstack-gold hover:bg-white border-2 border-black text-colorstack-black font-medium py-3 px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px]">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 1, delay: 0.5 }} 
+                className="flex flex-row flex-wrap justify-center md:justify-start gap-4"
+              >
+                <Link 
+                  to="/join" 
+                  className="bg-colorstack-gold hover:bg-white border-2 border-black text-colorstack-black font-medium py-2.5 sm:py-3 px-6 sm:px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px] text-sm sm:text-base"
+                >
                   Join Us
                 </Link>
-                <Link to="/about" className="bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-3 px-8 rounded-md transition-colors duration-300">
+                <Link 
+                  to="/about" 
+                  className="bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-2.5 sm:py-3 px-6 sm:px-8 rounded-md transition-colors duration-300 text-sm sm:text-base"
+                >
                   Learn More
                 </Link>
               </motion.div>
             </div>
-            <div className="relative w-full h-auto md:w-2/3 overflow-visible shadow-lg mx-auto animate-slow-float" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}>
-              <div className="absolute w-8 h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse"></div>
-              <div className="absolute w-4 h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce"></div>
-              <div className="absolute w-9 h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse"></div>
-              <div className="absolute w-5 h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float"></div>
+            
+            {/* Hero Image - now appears first on mobile */}
+            <div className="relative w-full sm:w-4/5 md:w-1/2 lg:w-2/3 overflow-visible shadow-lg mx-auto animate-slow-float" 
+                style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}>
+              {/* Decorative elements */}
+              <div className="absolute w-6 h-6 sm:w-8 sm:h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse"></div>
+              <div className="absolute w-3 h-3 sm:w-4 sm:h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce"></div>
+              <div className="absolute w-7 h-7 sm:w-9 sm:h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse"></div>
+              <div className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float"></div>
+              
               <div className="w-full h-full overflow-hidden" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}>
-                <img src="/images/hero.png" alt="ColorStack Grambling" className="w-full h-full object-cover" />
+                <img 
+                  src="/images/hero.png" 
+                  alt="ColorStack Grambling" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -69,20 +106,35 @@ const Index = () => {
 
       {/* Member Spotlight Section */}
       {featuredMembers.length > 0 && (
-        <section className="py-16 bg-black">
-          <div className="container-custom mx-auto">
-            <div className="text-center mb-12">
-              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }} className="text-4xl font-bold font-poppins mb-3 text-colorstack-gold pb-5">
+        <section className="py-12 md:py-16 bg-black">
+          <div className="container-custom mx-auto px-4 sm:px-6">
+            <div className="text-center mb-8 md:mb-12">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.7 }} 
+                viewport={{ once: true }} 
+                className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins mb-3 text-colorstack-gold pb-2 md:pb-5"
+              >
                 Member Spotlight
               </motion.h2>
-              <motion.div initial={{ width: 0 }} whileInView={{ width: "200px" }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }} className="h-1 bg-colorstack-gold mx-auto rounded-full" style={{ maxWidth: "200px" }} />
+              <motion.div 
+                initial={{ width: 0 }} 
+                whileInView={{ width: "200px" }} 
+                transition={{ duration: 0.5, delay: 0.3 }} 
+                viewport={{ once: true }} 
+                className="h-1 bg-colorstack-gold mx-auto rounded-full" 
+                style={{ maxWidth: "200px" }} 
+              />
             </div>
-            <div className="relative mx-4 md:mx-12">
-              <div className="absolute w-8 h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse"></div>
-              <div className="absolute w-4 h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce"></div>
-              <div className="absolute w-9 h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse"></div>
-              <div className="absolute w-5 h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float"></div>
-              <div className="bg-transparent p-8">
+            <div className="relative mx-2 sm:mx-4 md:mx-8 lg:mx-12">
+              {/* Decorative elements - responsive sizes */}
+              <div className="absolute w-6 h-6 sm:w-8 sm:h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse"></div>
+              <div className="absolute w-3 h-3 sm:w-4 sm:h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce"></div>
+              <div className="absolute w-6 h-6 sm:w-9 sm:h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse"></div>
+              <div className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float"></div>
+              
+              <div className="bg-transparent p-3 sm:p-5 md:p-6">
                 <div className="overflow-hidden relative">
                   <div className="transition-transform duration-500 ease-out flex" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                     {featuredMembers.map((member) => (
@@ -95,9 +147,14 @@ const Index = () => {
                   </div>
                 </div>
                 {featuredMembers.length > 1 && (
-                  <div className="flex justify-center mt-6 space-x-2">
+                  <div className="flex justify-center mt-4 sm:mt-6 space-x-1.5 sm:space-x-2">
                     {featuredMembers.map((_, index) => (
-                      <button key={index} onClick={() => setCurrentSlide(index)} className={`w-3 h-3 rounded-full transition-colors ${currentSlide === index ? 'bg-colorstack-gold' : 'bg-white/30'}`} aria-label={`Go to slide ${index + 1}`} />
+                      <button 
+                        key={index} 
+                        onClick={() => setCurrentSlide(index)} 
+                        className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${currentSlide === index ? 'bg-colorstack-gold' : 'bg-white/30'}`} 
+                        aria-label={`Go to slide ${index + 1}`} 
+                      />
                     ))}
                   </div>
                 )}
@@ -108,27 +165,22 @@ const Index = () => {
       )}
 
       {/* About Section */}
-      <section className="py-16 bg-black">
-        <div className="container-custom mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 items-center mx-4 md:mx-12">
-            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }} className="w-full md:w-2/5">
-              <p className="text-white text-lg mb-4 font-poppins">
-                ColorStack at Grambling State University is dedicated to increasing the number of Black and Latinx students who graduate with computing degrees.
-              </p>
-              <p className="text-white text-lg mb-6 font-poppins">
-                Our chapter provides academic support, professional development, and community building for students of color in computer science and related fields.
-              </p>
-              <Link to="/about" className="bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:translate-y-[2px] hover:border-white hover:text-white font-medium py-3 px-8 rounded-md inline-flex transition-all duration-300">
-                Learn More About Us
-              </Link>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }} className="w-full md:w-3/5">
+      <section className="py-12 md:py-16 bg-black">
+        <div className="container-custom mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+            {/* Image - appears first on mobile */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.7 }} 
+              viewport={{ once: true }} 
+              className="w-full md:w-1/2 lg:w-3/5 order-1 md:order-2"
+            >
               <div className="relative">
-                <div className="absolute w-8 h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse z-10"></div>
-                <div className="absolute w-4 h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce z-10"></div>
-                <div className="absolute w-9 h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse z-10"></div>
-                <div className="absolute w-5 h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float z-10"></div>
+                <div className="absolute w-6 h-6 sm:w-8 sm:h-8 bg-colorstack-gold rounded-full -top-4 -left-2 animate-pulse z-10"></div>
+                <div className="absolute w-3 h-3 sm:w-4 sm:h-4 bg-colorstack-gold rounded-full top-8 -left-6 animate-bounce z-10"></div>
+                <div className="absolute w-7 h-7 sm:w-9 sm:h-9 bg-colorstack-gold rounded-full -bottom-4 -right-2 animate-pulse z-10"></div>
+                <div className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-colorstack-gold rounded-full -bottom-6 right-12 animate-float z-10"></div>
                 <div className="overflow-hidden rounded-2xl shadow-xl">
                   <div className="transition-transform duration-1000 ease-out flex" style={{ transform: `translateX(-${aboutSlide * 100}%)` }}>
                     <div className="w-full flex-shrink-0">
@@ -142,11 +194,40 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center mt-4 space-x-2">
+                <div className="flex justify-center mt-4 space-x-1.5 sm:space-x-2">
                   {[0, 1, 2].map((index) => (
-                    <button key={index} onClick={() => setAboutSlide(index)} className={`w-3 h-3 rounded-full transition-colors ${aboutSlide === index ? 'bg-colorstack-gold' : 'bg-white/30'}`} aria-label={`Go to slide ${index + 1}`} />
+                    <button 
+                      key={index} 
+                      onClick={() => setAboutSlide(index)} 
+                      className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${aboutSlide === index ? 'bg-colorstack-gold' : 'bg-white/30'}`} 
+                      aria-label={`Go to slide ${index + 1}`} 
+                    />
                   ))}
                 </div>
+              </div>
+            </motion.div>
+            
+            {/* Text content - appears second on mobile */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.7 }} 
+              viewport={{ once: true }} 
+              className="w-full md:w-1/2 lg:w-2/5 order-2 md:order-1 text-center md:text-left mt-8 md:mt-0"
+            >
+              <p className="text-base sm:text-lg text-white mb-4 font-poppins">
+                ColorStack at Grambling State University is dedicated to increasing the number of Black and Latinx students who graduate with computing degrees.
+              </p>
+              <p className="text-base sm:text-lg text-white mb-6 font-poppins">
+                Our chapter provides academic support, professional development, and community building for students of color in computer science and related fields.
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <Link 
+                  to="/about" 
+                  className="bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:translate-y-[2px] hover:border-white hover:text-white font-medium py-2.5 sm:py-3 px-6 sm:px-8 rounded-md inline-flex transition-all duration-300 text-sm sm:text-base"
+                >
+                  Learn More About Us
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -156,10 +237,10 @@ const Index = () => {
       {/* Impact Section */}
       <section className="pt-16 pb-5 bg-black relative">
         {/* Floating Bubbles */}
-        <div className="absolute w-8 h-8 bg-colorstack-gold rounded-full top-12 left-12 animate-pulse z-10"></div>
-        <div className="absolute w-4 h-4 bg-colorstack-gold rounded-full top-24 left-20 animate-bounce z-10"></div>
-        <div className="absolute w-7 h-7 bg-colorstack-gold rounded-full bottom-16 right-14 animate-pulse z-10"></div>
-        <div className="absolute w-5 h-5 bg-colorstack-gold rounded-full bottom-28 right-24 animate-float z-10"></div>
+        <div className="absolute w-5 h-5 sm:w-8 sm:h-8 bg-colorstack-gold rounded-full top-12 left-8 sm:left-12 animate-pulse z-10"></div>
+        <div className="absolute w-3 h-3 sm:w-4 sm:h-4 bg-colorstack-gold rounded-full top-20 sm:top-24 left-14 sm:left-20 animate-bounce z-10"></div>
+        <div className="absolute w-4 h-4 sm:w-7 sm:h-7 bg-colorstack-gold rounded-full bottom-12 sm:bottom-16 right-10 sm:right-14 animate-pulse z-10"></div>
+        <div className="absolute w-3 h-3 sm:w-5 sm:h-5 bg-colorstack-gold rounded-full bottom-20 sm:bottom-28 right-16 sm:right-24 animate-float z-10"></div>
 
         <div className="container-custom mx-auto">
             <div className="text-center mb-8">
@@ -168,7 +249,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold font-poppins mb-3 text-colorstack-gold"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins mb-3 text-colorstack-gold pb-2 md:pb-5"
             >
                 Our Impact
             </motion.h2>
@@ -183,17 +264,17 @@ const Index = () => {
             </div>
 
             {/* Orbital Bubbles Area */}
-            <div className="relative h-[600px] md:h-[800px] overflow-hidden font-poppins flex justify-center items-center">
+            <div className="relative h-[500px] sm:h-[600px] md:h-[800px] overflow-hidden font-poppins flex justify-center items-center">
                 {/* Center Bubble - 250+ Registered Members (stationary) */}
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="absolute w-56 h-56 md:w-80 md:h-80 rounded-full bg-colorstack-gold flex flex-col items-center justify-center text-black shadow-xl z-20 animate-orbit-pulse"
+                    className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full bg-colorstack-gold flex flex-col items-center justify-center text-black shadow-xl z-20 animate-orbit-pulse"
                 >
-                    <h3 className="text-5xl md:text-7xl font-bold mb-2">250+</h3>
-                    <p className="text-lg md:text-2xl font-medium px-4 text-center">Registered Members</p>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-1 sm:mb-2">250+</h3>
+                    <p className="text-sm sm:text-lg md:text-2xl font-medium px-2 sm:px-4 text-center">Registered Members</p>
                 </motion.div>
                 
                 {/* Orbital Container - Provides the center point for all orbiting elements */}
@@ -204,11 +285,11 @@ const Index = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                         viewport={{ once: true }}
-                        className="absolute w-36 h-36 md:w-48 md:h-48 animate-orbit1"
+                        className="absolute w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 animate-orbit1"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-3xl md:text-5xl font-bold mb-1 md:mb-2">54%</h3>
-                            <p className="text-xs md:text-lg font-medium px-2 md:px-4 text-center">First-Gen Students</p>
+                            <h3 className="text-xl sm:text-3xl md:text-5xl font-bold mb-0 sm:mb-1 md:mb-2">54%</h3>
+                            <p className="text-[10px] sm:text-xs md:text-lg font-medium px-1 sm:px-2 md:px-4 text-center">First-Gen Students</p>
                         </div>
                     </motion.div>
 
@@ -218,11 +299,11 @@ const Index = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                         viewport={{ once: true }}
-                        className="absolute w-33 h-33 md:w-44 md:h-44 animate-orbit2"
+                        className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit2"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-2xl md:text-4xl font-bold mb-1">49%</h3>
-                            <p className="text-xs md:text-base font-medium px-2 md:px-3 text-center">Low-Income Students</p>
+                            <h3 className="text-lg sm:text-2xl md:text-4xl font-bold mb-0 sm:mb-1">49%</h3>
+                            <p className="text-[10px] sm:text-xs md:text-base font-medium px-1 sm:px-2 md:px-3 text-center">Low-Income Students</p>
                         </div>
                     </motion.div>
 
@@ -232,11 +313,11 @@ const Index = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
                         viewport={{ once: true }}
-                        className="absolute w-33 h-33 md:w-44 md:h-44 animate-orbit3"
+                        className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit3"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-lg md:text-4xl font-bold mb-0.5">30%</h3>
-                            <p className="text-xs md:text-base font-medium px-1 md:px-2 text-center">Identify As Women</p>
+                            <h3 className="text-base sm:text-lg md:text-4xl font-bold mb-0 sm:mb-0.5">30%</h3>
+                            <p className="text-[9px] sm:text-xs md:text-base font-medium px-0.5 sm:px-1 md:px-2 text-center">Identify As Women</p>
                         </div>
                     </motion.div>
 
@@ -246,11 +327,11 @@ const Index = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.9 }}
                         viewport={{ once: true }}
-                        className="absolute w-33 h-33 md:w-44 md:h-44 animate-orbit4"
+                        className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit4"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-base md:text-4xl font-bold mb-0.5">25+</h3>
-                            <p className="text-xs md:text-base font-medium px-1 md:px-2 text-center">2025 Offers</p>
+                            <h3 className="text-base sm:text-base md:text-4xl font-bold mb-0 sm:mb-0.5">25+</h3>
+                            <p className="text-[9px] sm:text-xs md:text-base font-medium px-0.5 sm:px-1 md:px-2 text-center">2025 Offers</p>
                         </div>
                     </motion.div>
 
@@ -260,11 +341,11 @@ const Index = () => {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
                         viewport={{ once: true }}
-                        className="absolute w-33 h-33 md:w-44 md:h-44 animate-orbit5"
+                        className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit5"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl orbit-bubble circle-glow hover:cursor-pointer">
-                            <h3 className="text-[10px] md:text-4xl font-bold mb-0">10+</h3>
-                            <p className="text-xs md:text-base font-medium px-0.5 text-center leading-tight">Partners</p>
+                            <h3 className="text-sm sm:text-base md:text-4xl font-bold mb-0">10+</h3>
+                            <p className="text-[8px] sm:text-xs md:text-base font-medium px-0.5 text-center leading-tight">Partners</p>
                         </div>
                     </motion.div>
                 </div>
@@ -276,7 +357,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold font-poppins mb-3 text-colorstack-gold"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins mb-3 text-colorstack-gold"
             >
                 We've secured offers from:
             </motion.h2>
@@ -311,7 +392,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="flex flex-col items-center mb-12"
             >
-                <h2 className="text-3xl md:text-5xl font-bold text-colorstack-gold text-center mb-3">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-colorstack-gold text-center mb-3">
                     Upcoming Events
                 </h2>
                 <motion.div 
@@ -442,7 +523,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center mb-14"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-colorstack-gold text-center mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-colorstack-gold text-center mb-3">
               Get Involved
             </h2>
             <motion.div 
@@ -455,25 +536,25 @@ const Index = () => {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {/* Sponsorship Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="bg-black rounded-2xl border border-colorstack-gold/30 p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.3)] hover:border-colorstack-gold/80"
+              className="bg-black rounded-2xl border border-colorstack-gold/30 p-4 sm:p-6 md:p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.3)] hover:border-colorstack-gold/80"
             >
-              <div className="w-16 h-16 bg-colorstack-gold/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-colorstack-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-colorstack-gold/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-colorstack-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <p className="text-white/70 text-center mb-2">Collaborate With Us</p>
-              <h3 className="text-2xl md:text-3xl font-bold text-colorstack-gold mb-6 text-center">
+              <p className="text-white/70 text-center mb-1 sm:mb-2 text-xs sm:text-sm">Collaborate With Us</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-colorstack-gold mb-4 sm:mb-6 text-center">
                 Sponsorship
               </h3>
-              <Link to="/partnerships" className="mt-auto bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-3 px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px]">
+              <Link to="/partnerships" className="mt-auto bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px] text-sm sm:text-base">
                 Learn More
               </Link>
             </motion.div>
@@ -484,18 +565,18 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="bg-colorstack-gold rounded-2xl p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.5)]"
+              className="bg-colorstack-gold rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.5)]"
             >
-              <div className="w-16 h-16 bg-black/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-black/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <p className="text-black/80 text-center mb-2">Join Us</p>
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-6 text-center">
+              <p className="text-black/80 text-center mb-1 sm:mb-2 text-xs sm:text-sm">Join Us</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6 text-center">
                 Join The Community
               </h3>
-              <Link to="/join" className="mt-auto bg-black hover:text-white text-colorstack-gold border-2 border-black font-medium py-3 px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px]">
+              <Link to="/join" className="mt-auto bg-black hover:text-white text-colorstack-gold border-2 border-black font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px] text-sm sm:text-base">
                 Apply Now
               </Link>
             </motion.div>
@@ -506,18 +587,18 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="bg-black rounded-2xl border border-colorstack-gold/30 p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.3)] hover:border-colorstack-gold/80"
+              className="col-span-2 sm:col-span-2 md:col-span-1 mx-auto max-w-sm bg-black rounded-2xl border border-colorstack-gold/30 p-4 sm:p-6 md:p-8 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:-rotate-1 hover:shadow-[0_0_15px_rgba(234,170,0,0.3)] hover:border-colorstack-gold/80"
             >
-              <div className="w-16 h-16 bg-colorstack-gold/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-colorstack-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-colorstack-gold/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-colorstack-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <p className="text-white/70 text-center mb-2">Get In Touch</p>
-              <h3 className="text-2xl md:text-3xl font-bold text-colorstack-gold mb-6 text-center">
+              <p className="text-white/70 text-center mb-1 sm:mb-2 text-xs sm:text-sm">Get In Touch</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-colorstack-gold mb-4 sm:mb-6 text-center">
                 Contact Us
               </h3>
-              <a href="mailto:colorstack.grambling@gmail.com" className="mt-auto bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-3 px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px]">
+              <a href="mailto:colorstack.grambling@gmail.com" className="mt-auto bg-transparent border-2 border-colorstack-gold text-colorstack-gold hover:border-white hover:text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-md transition-all duration-300 hover:translate-y-[-2px] text-sm sm:text-base">
                 Email Us
               </a>
             </motion.div>
