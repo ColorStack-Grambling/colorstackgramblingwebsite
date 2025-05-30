@@ -184,46 +184,46 @@ html {
 
 @keyframes orbit1 {
   0% { 
-    transform: rotate(0deg) translateX(250px) rotate(0deg);
+    transform: rotate(0deg) translateX(300px) rotate(0deg);
   }
   100% { 
-    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
   }
 }
 
 @keyframes orbit2 {
   0% { 
-    transform: rotate(72deg) translateX(250px) rotate(-72deg);
+    transform: rotate(72deg) translateX(300px) rotate(-72deg);
   }
   100% { 
-    transform: rotate(432deg) translateX(250px) rotate(-432deg);
+    transform: rotate(432deg) translateX(300px) rotate(-432deg);
   }
 }
 
 @keyframes orbit3 {
   0% { 
-    transform: rotate(144deg) translateX(250px) rotate(-144deg);
+    transform: rotate(144deg) translateX(300px) rotate(-144deg);
   }
   100% { 
-    transform: rotate(504deg) translateX(250px) rotate(-504deg);
+    transform: rotate(504deg) translateX(300px) rotate(-504deg);
   }
 }
 
 @keyframes orbit4 {
   0% { 
-    transform: rotate(216deg) translateX(250px) rotate(-216deg);
+    transform: rotate(216deg) translateX(300px) rotate(-216deg);
   }
   100% { 
-    transform: rotate(576deg) translateX(250px) rotate(-576deg);
+    transform: rotate(576deg) translateX(300px) rotate(-576deg);
   }
 }
 
 @keyframes orbit5 {
   0% { 
-    transform: rotate(288deg) translateX(250px) rotate(-288deg);
+    transform: rotate(288deg) translateX(300px) rotate(-288deg);
   }
   100% { 
-    transform: rotate(648deg) translateX(250px) rotate(-648deg);
+    transform: rotate(648deg) translateX(300px) rotate(-648deg);
   }
 }
 
