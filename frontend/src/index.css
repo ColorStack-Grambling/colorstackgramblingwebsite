@@ -6,6 +6,11 @@
 @tailwind utilities;
 
 
+body {
+  background-color: black;
+  font-family: poppins, sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -125,5 +130,232 @@
   
   .text-gradient {
     @apply bg-gradient-to-r from-colorstack-gold to-colorstack-gold/70 bg-clip-text text-transparent;
+  }
+}
+
+body {
+  cursor: url('/images/goldcursor.png') 0 0, auto;
+}
+
+a, button, .clickable {
+  cursor: url('/images/hand16.png') 0 0, pointer;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Animation classes for the impact statistics floating circles */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slow-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-reverse-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slow-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes orbit1 {
+  0% { 
+    transform: rotate(0deg) translateX(300px) rotate(0deg);
+  }
+  100% { 
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  0% { 
+    transform: rotate(72deg) translateX(300px) rotate(-72deg);
+  }
+  100% { 
+    transform: rotate(432deg) translateX(300px) rotate(-432deg);
+  }
+}
+
+@keyframes orbit3 {
+  0% { 
+    transform: rotate(144deg) translateX(300px) rotate(-144deg);
+  }
+  100% { 
+    transform: rotate(504deg) translateX(300px) rotate(-504deg);
+  }
+}
+
+@keyframes orbit4 {
+  0% { 
+    transform: rotate(216deg) translateX(300px) rotate(-216deg);
+  }
+  100% { 
+    transform: rotate(576deg) translateX(300px) rotate(-576deg);
+  }
+}
+
+@keyframes orbit5 {
+  0% { 
+    transform: rotate(288deg) translateX(300px) rotate(-288deg);
+  }
+  100% { 
+    transform: rotate(648deg) translateX(300px) rotate(-648deg);
+  }
+}
+
+
+/* Add circular glow animation */
+@keyframes circle-glow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
+  }
+}
+
+/* Add animations for event cards */
+@keyframes staggered-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make sure we have the orbit-pulse animation working well for the center bubble */
+@keyframes orbit-pulse {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(218, 165, 32, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.7));
+    transform: scale(1.03);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(218, 165, 32, 0.4));
+    transform: scale(1);
+  }
+}
+
+/* Circle glow class */
+.circle-glow {
+  animation: circle-glow 3s infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-slow-float {
+  animation: slow-float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse-slow {
+  animation: float-reverse-slow 7s ease-in-out infinite;
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 8s ease-in-out infinite;
+}
+
+.animate-orbit1 {
+  animation: orbit1 30s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate-orbit2 {
+  animation: orbit2 30s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate-orbit3 {
+  animation: orbit3 30s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate-orbit4 {
+  animation: orbit4 30s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate-orbit5 {
+  animation: orbit5 30s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.orbit-bubble:hover {
+  transform: scale(1.08);
+  z-index: 30;
+}
+
+.animate-orbit-pulse {
+  animation: orbit-pulse 6s ease-in-out infinite;
+}
+
+.animate-orbit-bubble-glow {
+  animation: orbit-bubble-glow 4s ease-in-out infinite;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  @keyframes orbit1 {
+    0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+  }
+
+  @keyframes orbit2 {
+    0% { transform: rotate(72deg) translateX(200px) rotate(-72deg); }
+    100% { transform: rotate(432deg) translateX(200px) rotate(-432deg); }
+  }
+
+  @keyframes orbit3 {
+    0% { transform: rotate(144deg) translateX(200px) rotate(-144deg); }
+    100% { transform: rotate(504deg) translateX(200px) rotate(-504deg); }
+  }
+
+  @keyframes orbit4 {
+    0% { transform: rotate(216deg) translateX(200px) rotate(-216deg); }
+    100% { transform: rotate(576deg) translateX(200px) rotate(-576deg); }
+  }
+
+  @keyframes orbit5 {
+    0% { transform: rotate(288deg) translateX(200px) rotate(-288deg); }
+    100% { transform: rotate(648deg) translateX(200px) rotate(-648deg); }
   }
 }

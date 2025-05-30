@@ -135,7 +135,11 @@ export default {
 					'100%': {
 						transform: 'translateX(-100%)'
 					}
-				}
+				},
+				floating: {
+          			'0%, 100%': { transform: 'translateY(0)' },
+          			'50%': { transform: 'translateY(-10px)' },
+        		}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -144,7 +148,8 @@ export default {
 				'slide-out': 'slide-out 0.3s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
-				'company-slide': 'company-slide 30s linear infinite'
+				'company-slide': 'company-slide 30s linear infinite',
+				'slow-float': 'floating 4s ease-in-out infinite',
 			}
 		}
 	},

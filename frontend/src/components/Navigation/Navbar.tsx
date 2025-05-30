@@ -17,23 +17,23 @@ const Navbar = () => {
 
   const isActive = (path: string): string => {
     return location.pathname === path
-      ? "text-colorstack-purple font-semibold"
-      : "text-gray-700 hover:text-colorstack-purple";
+      ? "text-white font-semibold font-poppins hover:text-colorstack-gold transition-colors duration-300"
+      : "text-white font-semibold font-poppins hover:text-colorstack-gold transition-colors duration-300";
   };
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-20 flex items-center bg-black/70 backdrop-blur-md">
+    <nav className="fixed inset-x-0 top-0 z-20 flex items-center bg-black/70 backdrop-blur-md pt-5">
       <div className="container-custom mx-auto">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <img src={Logo} alt="ColorStack Logo" className="h-12 w-auto" />
-              <span className="text-2xl font-poppins font-bold text-gradient">ColorStack Grambling</span>
+              <span className="text-2xl font-poppins font-semibold text-colorstack-gold">ColorStack Grambling</span>
             </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
+              {navigation.slice(0, -1).map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -44,6 +44,13 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
+              {/* Join Us button */}
+              <Link
+                to="/join"
+                className="bg-colorstack-gold hover:bg-white text-black font-medium px-5 py-2 rounded-md transition-all duration-300 hover:translate-y-[2px]"
+              >
+                Join Us
+              </Link>
             </div>
           </div>
           <div className="md:hidden">
@@ -64,7 +71,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden animate-slide-in" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navigation.map((item) => (
+            {navigation.slice(0, -1).map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
@@ -76,6 +83,14 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            {/* Mobile Join Us button */}
+            <Link
+              to="/join"
+              className="block px-3 py-2 mt-2 bg-colorstack-gold hover:bg-colorstack-gold/90 text-black font-medium rounded-md transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Join Us
+            </Link>
           </div>
         </div>
       )}

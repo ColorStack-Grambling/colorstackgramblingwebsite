@@ -60,7 +60,7 @@ const JoinForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-white mb-1">
               Full Name *
             </label>
             <input
@@ -70,13 +70,13 @@ const JoinForm = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
               placeholder="John Doe"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
               Email Address *
             </label>
             <input
@@ -86,7 +86,7 @@ const JoinForm = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
               placeholder="johndoe@example.com"
             />
           </div>
@@ -94,7 +94,7 @@ const JoinForm = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="major" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="major" className="block text-sm font-medium text-white mb-1">
               Major *
             </label>
             <input
@@ -104,13 +104,13 @@ const JoinForm = () => {
               required
               value={formData.major}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
               placeholder="Computer Science"
             />
           </div>
           
           <div>
-            <label htmlFor="year" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="year" className="block text-sm font-medium text-white mb-1">
               Year *
             </label>
             <select
@@ -119,7 +119,7 @@ const JoinForm = () => {
               required
               value={formData.year}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
             >
               <option value="" disabled>Select your year</option>
               <option value="Freshman">Freshman</option>
@@ -132,7 +132,7 @@ const JoinForm = () => {
         </div>
         
         <div>
-          <label htmlFor="whyJoin" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="whyJoin" className="block text-sm font-medium text-white mb-1">
             Why are you interested in joining ColorStack? *
           </label>
           <textarea
@@ -142,13 +142,13 @@ const JoinForm = () => {
             rows={4}
             value={formData.whyJoin}
             onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+            className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
             placeholder="Tell us why you want to join and what you hope to get out of the experience."
           />
         </div>
         
         <div>
-          <label htmlFor="referral" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="referral" className="block text-sm font-medium text-white mb-1">
             How did you hear about us?
           </label>
           <input
@@ -157,7 +157,7 @@ const JoinForm = () => {
             name="referral"
             value={formData.referral}
             onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+            className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
             placeholder="Friend, social media, campus event, etc."
           />
         </div>
@@ -166,7 +166,7 @@ const JoinForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn-primary flex justify-center items-center"
+            className="w-full bg-colorstack-gold hover:bg-white text-black font-medium px-5 py-2 rounded-md transition-all duration-300 hover:translate-y-[2px]"
           >
             {isSubmitting ? (
               <span>Processing...</span>

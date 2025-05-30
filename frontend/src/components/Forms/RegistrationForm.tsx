@@ -83,14 +83,14 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
     <div className="w-full max-w-2xl mx-auto">
       {eventName && (
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold">Register for: {eventName}</h2>
+          <h2 className="text-2xl font-bold text-colorstack-gold">Register for: {eventName}</h2>
         </div>
       )}
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-white mb-1">
               Full Name *
             </label>
             <input
@@ -100,13 +100,13 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-gold focus:outline-none focus:ring-1 focus:ring-colorstack-gold"
               placeholder="John Doe"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
               Email Address *
             </label>
             <input
@@ -116,7 +116,7 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-gold focus:outline-none focus:ring-1 focus:ring-colorstack-gold"
               placeholder="johndoe@example.com"
             />
           </div>
@@ -124,7 +124,7 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="major" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="major" className="block text-sm font-medium text-white mb-1">
               Major *
             </label>
             <input
@@ -134,13 +134,13 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
               required
               value={formData.major}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-gold focus:outline-none focus:ring-1 focus:ring-colorstack-gold"
               placeholder="Computer Science"
             />
           </div>
           
           <div>
-            <label htmlFor="year" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="year" className="block text-sm font-medium text-white mb-1">
               Year *
             </label>
             <select
@@ -149,7 +149,7 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
               required
               value={formData.year}
               onChange={handleChange}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+              className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-gold focus:outline-none focus:ring-1 focus:ring-colorstack-gold"
             >
               <option value="" disabled>Select your year</option>
               <option value="Freshman">Freshman</option>
@@ -162,7 +162,7 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
         </div>
         
         <div>
-          <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-white mb-1">
             Dietary Restrictions (if applicable)
           </label>
           <input
@@ -171,13 +171,13 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
             name="dietaryRestrictions"
             value={formData.dietaryRestrictions}
             onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-colorstack-purple focus:outline-none focus:ring-1 focus:ring-colorstack-purple"
+            className="w-full bg-black rounded-md border border-colorstack-gold px-3 py-2 text-white placeholder-gray-400 focus:border-colorstack-gold focus:outline-none focus:ring-1 focus:ring-colorstack-gold"
             placeholder="Vegetarian, vegan, allergies, etc."
           />
         </div>
         
         <div>
-          <span className="block text-sm font-medium text-gray-700 mb-2">
+          <span className="block text-sm font-medium text-white mb-2">
             Areas of Interest (select all that apply)
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -189,11 +189,11 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
                   name="interests"
                   checked={formData.interests.includes(option)}
                   onChange={() => handleCheckboxChange(option)}
-                  className="h-4 w-4 rounded border-gray-300 text-colorstack-purple focus:ring-colorstack-purple"
+                  className="h-4 w-4 rounded border-colorstack-gold text-colorstack-gold focus:ring-colorstack-gold"
                 />
                 <label
                   htmlFor={`interest-${option}`}
-                  className="ml-2 text-sm text-gray-700"
+                  className="ml-2 text-sm text-white/80"
                 >
                   {option}
                 </label>
@@ -206,7 +206,7 @@ const RegistrationForm = ({ eventId, eventName }: RegistrationFormProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn-primary flex justify-center items-center"
+            className="w-full bg-colorstack-gold hover:bg-white text-black font-medium px-5 py-2 rounded-md transition-all duration-300 hover:translate-y-[2px]"
           >
             {isSubmitting ? (
               <span>Processing...</span>
