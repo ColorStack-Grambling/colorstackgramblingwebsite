@@ -273,7 +273,7 @@ const Index = () => {
                     viewport={{ once: true }}
                     className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full bg-colorstack-gold flex flex-col items-center justify-center text-black shadow-xl z-20 animate-orbit-pulse"
                 >
-                    <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-1 sm:mb-2">250+</h3>
+                    <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-1 sm:mb-2">130+</h3>
                     <p className="text-sm sm:text-lg md:text-2xl font-medium px-2 sm:px-4 text-center">Registered Members</p>
                 </motion.div>
                 
@@ -330,12 +330,12 @@ const Index = () => {
                         className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit4"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-base sm:text-base md:text-4xl font-bold mb-0 sm:mb-0.5">25+</h3>
+                            <h3 className="text-base sm:text-base md:text-4xl font-bold mb-0 sm:mb-0.5">50+</h3>
                             <p className="text-[9px] sm:text-xs md:text-base font-medium px-0.5 sm:px-1 md:px-2 text-center">2025 Offers</p>
                         </div>
                     </motion.div>
 
-                    {/* 10+ Industry Partners - Orbiting bubble 5 */}
+                    {/* Currently race demographic, will change to Industry Partners - Orbiting bubble 5  */}
                     <motion.div 
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -344,8 +344,8 @@ const Index = () => {
                         className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit5"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl orbit-bubble circle-glow hover:cursor-pointer">
-                            <h3 className="text-sm sm:text-base md:text-4xl font-bold mb-0">10+</h3>
-                            <p className="text-[8px] sm:text-xs md:text-base font-medium px-0.5 text-center leading-tight">Partners</p>
+                            <h3 className="text-sm sm:text-base md:text-4xl font-bold mb-0">100%</h3>
+                            <p className="text-[8px] sm:text-xs md:text-base font-medium px-0.5 text-center leading-tight">Identify as Black or African American</p>
                         </div>
                     </motion.div>
                 </div>

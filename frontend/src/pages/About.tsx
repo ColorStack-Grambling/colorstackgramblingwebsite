@@ -3,9 +3,22 @@ import MemberSpotlight from "../components/Members/MemberSpotlight";
 import { members, leaders } from "../utils/mockData";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 const About = () => {
   const teamMembers = members.slice(2);
+
+  //scroll to leadership section on route change
+  const eboardRef = useRef(null);
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.pathname === '/leadership' && eboardRef.current) {
+      eboardRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
 
   return (
     <PublicLayout>
@@ -74,7 +87,7 @@ const About = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="section-padding" id="leadership">
+      <section className="section-padding" id="leadership" ref={eboardRef}>
         <div className="container-custom mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

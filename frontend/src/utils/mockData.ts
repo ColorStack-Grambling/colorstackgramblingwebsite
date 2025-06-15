@@ -89,54 +89,54 @@ export const members: Member[] = [
 export const events: Event[] = [
   {
     id: 1,
-    title: "Technical Resume Workshop",
-    description: "Learn how to craft a technical resume that stands out to recruiters from major tech companies.",
-    date: "2025-05-15",
-    time: "4:00 PM - 6:00 PM",
-    location: "Jacob T. Stewart Room 234",
+    title: "General Body Interest Meeting",
+    description: "Join us for our first general body meeting of the semester to learn about ColorStack, our mission, and how you can get involved.",
+    date: "2025-03-14",
+    time: "11:00 AM - 12:00 PM",
+    location: "Carver Auditorium, Room 94",
     image: "/images/event1.jpeg",
-    isPast: false
+    isPast: true
   },
   {
     id: 2,
-    title: "Intro to Web Development",
-    description: "Hands-on workshop covering HTML, CSS, and JavaScript fundamentals for beginners.",
-    date: "2025-05-22",
-    time: "5:00 PM - 7:00 PM",
-    location: "Digital Library Room 101",
-    image: "/images/event2.jpeg",
-    isPast: false
-  },
-  {
-    id: 3,
-    title: "Mock Technical Interviews",
-    description: "Practice technical interviews with industry professionals and receive personalized feedback.",
-    date: "2025-06-05",
-    time: "3:00 PM - 7:00 PM",
-    location: "Virtual (Zoom)",
+    title: "Zero to Hero: A Grambling Success Story",
+    description: "Come hear from Jahres Peters, incoming software engineer at OpenAi and previous intern at Microsoft, IMC Trading, and Splunk, as he shares his journey from starting with no coding experience to landing multiple internships at top tech companies.",
+    date: "2025-04-10",
+    time: "11:00 AM - 12:30 PM",
+    location: "Charles P. Adams Room 200",
     image: "/images/event3.jpeg",
-    isPast: false
-  },
-  {
-    id: 4,
-    title: "Alumni Panel: Paths to Tech",
-    description: "GSU alumni in tech share their career journeys and answer questions from current students.",
-    date: "2025-04-01",
-    time: "6:00 PM - 8:00 PM",
-    location: "Student Union Theater",
-    image: "/images/about1.jpeg",
     isPast: true
   },
-  {
-    id: 5,
-    title: "Python Coding Challenge",
-    description: "Test your Python skills in a friendly competition with prizes for top performers.",
-    date: "2025-03-20",
-    time: "4:00 PM - 7:00 PM",
-    location: "Jacob T. Stewart Room 156",
-    image: "/images/about2.jpeg",
-    isPast: true
-  }
+  // {
+  //   id: 3,
+  //   title: "Mock Technical Interviews",
+  //   description: "Practice technical interviews with industry professionals and receive personalized feedback.",
+  //   date: "2025-06-05",
+  //   time: "3:00 PM - 7:00 PM",
+  //   location: "Virtual (Zoom)",
+  //   image: "/images/event3.jpeg",
+  //   isPast: true
+  // },
+  // {
+  //   id: 4,
+  //   title: "Alumni Panel: Paths to Tech",
+  //   description: "GSU alumni in tech share their career journeys and answer questions from current students.",
+  //   date: "2025-04-01",
+  //   time: "6:00 PM - 8:00 PM",
+  //   location: "Student Union Theater",
+  //   image: "/images/about1.jpeg",
+  //   isPast: true
+  // },
+  // {
+  //   id: 5,
+  //   title: "Python Coding Challenge",
+  //   description: "Test your Python skills in a friendly competition with prizes for top performers.",
+  //   date: "2025-03-20",
+  //   time: "4:00 PM - 7:00 PM",
+  //   location: "Jacob T. Stewart Room 156",
+  //   image: "/images/about2.jpeg",
+  //   isPast: true
+  // }
 ];
 
 // Mock Companies Data
