@@ -288,7 +288,7 @@ const Index = () => {
                         className="absolute w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 animate-orbit1"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-xl sm:text-3xl md:text-5xl font-bold mb-0 sm:mb-1 md:mb-2">54%</h3>
+                            <h3 className="text-xl sm:text-3xl md:text-5xl font-bold mb-0 sm:mb-1 md:mb-2">50%</h3>
                             <p className="text-[10px] sm:text-xs md:text-lg font-medium px-1 sm:px-2 md:px-4 text-center">First-Gen Students</p>
                         </div>
                     </motion.div>
@@ -302,7 +302,7 @@ const Index = () => {
                         className="absolute w-20 h-20 sm:w-33 sm:h-33 md:w-44 md:h-44 animate-orbit2"
                     >
                         <div className="w-full h-full rounded-full bg-colorstack-gold text-black flex flex-col items-center justify-center shadow-xl circle-glow orbit-bubble hover:cursor-pointer">
-                            <h3 className="text-lg sm:text-2xl md:text-4xl font-bold mb-0 sm:mb-1">49%</h3>
+                            <h3 className="text-lg sm:text-2xl md:text-4xl font-bold mb-0 sm:mb-1">95%</h3>
                             <p className="text-[10px] sm:text-xs md:text-base font-medium px-1 sm:px-2 md:px-3 text-center">Low-Income Students</p>
                         </div>
                     </motion.div>
